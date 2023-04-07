@@ -77,7 +77,8 @@ export function EdgeStorage(options: fetch | { token?: string, region?: Region, 
         const { ok } = await f.put(`${parseRegion(data.region ?? o.region)}storage.bunnycdn.com/${data.zone ?? o.zone}/${data.key.includes('/') ? data.key : `/${data.key}`}`, {
           data: data.content,
           headers: {
-            ...(data.sha256 && { Checksum: data.sha256 })
+            ...(data.sha256 && { Checksum: data.sha256 }),
+            ...(o.token && { AccessKey: o.token })
           },
           type: 'none'
         })
@@ -93,6 +94,9 @@ export function EdgeStorage(options: fetch | { token?: string, region?: Region, 
           `${parseRegion(data.region ?? o.region)}storage.bunnycdn.com/${data.zone ?? o.zone}/${data.key}`,
           {
             type: 'stream',
+            headers: {
+              ...(o.token && { AccessKey: o.token })
+            }
           },
         )
   
@@ -107,6 +111,9 @@ export function EdgeStorage(options: fetch | { token?: string, region?: Region, 
           `${parseRegion(data.region ?? o.region)}storage.bunnycdn.com/${data.zone ?? o.zone}/${data.key}`,
           {
             type: 'text',
+            headers: {
+              ...(o.token && { AccessKey: o.token })
+            }
           },
         )
   
@@ -116,12 +123,15 @@ export function EdgeStorage(options: fetch | { token?: string, region?: Region, 
       async list(data: { zone: string, directory: string, region?: Region }): Promise<File[] | undefined> {
         if (!o.zone && !data.zone)
           throw new Error('No storage zone defined!')
-          
+
         const url = `${parseRegion(data.region ?? o.region)}storage.bunnycdn.com/${data.zone ?? o.zone}/${data.directory}/`
           .replace('///', '/')
   
         const { data: json, ok } = await f.get(url, {
-          type: 'json'
+          type: 'json',
+          headers: {
+            ...(o.token && { AccessKey: o.token })
+          }
         })
   
         if (!ok)
