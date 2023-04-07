@@ -1,0 +1,13 @@
+{
+  "fmt": {
+    "options": {
+      "semiColons": false,
+      "singleQuote": true
+    }
+  },
+  "tasks": {
+    "test": "deno test -A --fail-fast",
+    "build": "deno run -A .github/build.ts 0.0.1",
+    "publish": "deno task build && npm publish --access=public"
+  }
+}
