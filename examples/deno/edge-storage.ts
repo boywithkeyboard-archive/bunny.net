@@ -1,7 +1,7 @@
 import Client, { EdgeStorage } from 'https://deno.land/x/bunny@v0.1.0/mod.ts' // < please use the latest version
 
 const bunny = new Client({ token: Deno.env.get('token') as string })
-  .use(EdgeStorage)
+  .use(EdgeStorage) // you could also set the token here, e.g. .use(EdgeStorage({ token: Deno.env.get('token') as string }))
 
 // upload file
 const file = await Deno.open('./test/image.png', { read: true })
