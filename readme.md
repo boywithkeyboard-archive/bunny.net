@@ -1,6 +1,6 @@
 ## bunny
 
-> **Note**: bunny doesn't yet support all features of bunny.net's API, please read our [roadmap](https://github.com/azurystudio/bunny/issues/1) to learn more.
+> **Note**: bunny doesn't yet support all features of bunny.net's API, please read our [roadmap](https://github.com/boywithkeyboard/bunny/issues/1) to learn more.
 
 ### Setup
 
@@ -15,4 +15,4 @@ const bunny = new Client({ token: '' })
 ### Usage
 
 - **Deno**
-  - [EdgeStorage](https://github.com/azurystudio/bunny/blob/dev/examples/deno/edge-storage.ts)
+  - [EdgeStorage](https://github.com/boywithkeyboard/bunny/blob/dev/examples/deno/edge-storage.ts)
