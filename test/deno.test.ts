@@ -1,5 +1,5 @@
 import Client, { EdgeStorage } from '../mod.ts'
-import { assertEquals } from 'https://deno.land/std@v0.184.0/testing/asserts.ts'
+import { assertEquals } from 'https://deno.land/std@v0.185.0/testing/asserts.ts'
 
 const bunny = new Client({ token: Deno.env.get('token') as string })
   .use(EdgeStorage)
