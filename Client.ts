@@ -1,4 +1,4 @@
-import fetch from 'https://deno.land/x/fetch_client@v0.6.0/mod.ts'
+import fetch from 'https://deno.land/x/fetch_client@v0.7.0/mod.ts'
 
 export class Client {
   private fetch
