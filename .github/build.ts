@@ -1,5 +1,5 @@
-import { build, emptyDir } from 'https://deno.land/x/dnt@0.35.0/mod.ts'
-import * as esbuild from 'https://deno.land/x/esbuild@v0.17.19/mod.js'
+import { build, emptyDir } from 'https://deno.land/x/dnt@0.40.0/mod.ts'
+import * as esbuild from 'https://deno.land/x/esbuild@v0.20.1/mod.js'
 
 await emptyDir('./npm')
 
