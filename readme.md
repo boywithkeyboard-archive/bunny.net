@@ -5,7 +5,7 @@
 #### Deno
 
 ```ts
-import { SMS } from 'https://esm.sh/bunny.net'
+import { Client } from 'https://esm.sh/bunny.net'
 ```
 
 #### Node.js
@@ -15,7 +15,7 @@ npm i bunny.net
 ```
 
 ```ts
-import { SMS } from 'bunny.net'
+import { Client } from 'bunny.net'
 ```
 
 ### Usage
