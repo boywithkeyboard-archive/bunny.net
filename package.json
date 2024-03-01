@@ -14,8 +14,8 @@
     "cdn",
     "edge storage"
   ],
-  "main": "./build/main.js",
-  "module": "./build/main.js",
+  "main": "./build/main.cjs",
+  "module": "./build/main.mjs",
   "types": "./build/main.d.ts",
   "files": [
     "./build"
@@ -33,18 +33,18 @@
     }
   },
   "scripts": {
-    "build:cjs": "esbuild main.ts --bundle --minify --format=cjs --target=es2022 --outfile=build/main.cjs",
-    "build:esm": "esbuild main.ts --bundle --minify --format=esm --target=es2022 --outfile=build/main.mjs",
-    "build": "tsc && npm run build:cjs && npm run build:esm",
+    "build:cjs": "esbuild src/index.ts --bundle --minify --format=cjs --target=es2022 --outfile=build/index.cjs",
+    "build:esm": "esbuild src/index.ts --bundle --minify --format=esm --target=es2022 --outfile=build/index.mjs",
+    "build": "rimraf build && tsc && npm run build:cjs && npm run build:esm",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "@types/node": "^20.11.19",
     "esbuild": "^0.20.1",
+    "rimraf": "^5.0.5",
     "typescript": "^5.3.3"
   },
   "engines": {
     "node": ">=20"
-  },
-  "type": "module"
+  }
 }
