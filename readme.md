@@ -29,19 +29,32 @@ const bunny = new Client({
 })
 ```
 
-### Roadmap
+### Guide
 
-- [x] **DNS Zone** *(available as `dns`)*
+#### Error Handling
 
-  - [ ] `listZones()`
-  - [x] `addZone()`
-  - [x] `getZone()`
-  - [ ] `updateZone()`
-  - [x] `deleteZone()`
-  - [ ] `exportRecords()`
-  - [ ] `getQueryStatistics()`
-  - [ ] `checkZoneAvailability()`
-  - [x] `addRecord()`
-  - [x] `updateRecord()`
-  - [x] `deleteRecord()`
-  - [ ] `importRecords()`
+All functions return an object with the `data` and `error` properties. The `error` property is either `true` or `false`, depending on the status code of the response.
+
+If the `error` property is `false`, you can access the response data in the `data` property.
+
+```ts
+const { data, error } = await bunny.method()
+
+if (!error) {
+  // do smth with response data
+} else {
+  // handle error
+}
+```
+
+#### Debugging
+
+If you encounter issues, you should enable **debug mode**.
+
+```ts
+new Client({
+  debug: true
+})
+```
+
+If the response from the API is erroneous, the response body is printed out on the console in addition to the behavior described above.
