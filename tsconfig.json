@@ -13,10 +13,12 @@
     "emitDeclarationOnly": true,
     "esModuleInterop": true,
     "moduleResolution": "bundler",
+    "rootDir": "src",
     "outDir": "build",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "incremental": true
+    "incremental": true,
+    "tsBuildInfoFile": "build/.tsbuildinfo"
   },
   "include": [
     "**/*.ts"
