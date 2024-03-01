@@ -14,21 +14,21 @@
     "cdn",
     "edge storage"
   ],
-  "main": "./build/main.cjs",
-  "module": "./build/main.mjs",
-  "types": "./build/main.d.ts",
+  "main": "./build/index.cjs",
+  "module": "./build/index.mjs",
+  "types": "./build/index.d.ts",
   "files": [
     "./build"
   ],
   "exports": {
     ".": {
       "import": {
-        "default": "./build/main.mjs",
+        "default": "./build/index.mjs",
         "types": "./build/index.d.ts"
       },
       "require": {
-        "default": "./build/main.cjs",
-        "types": "./build/main.d.ts"
+        "default": "./build/index.cjs",
+        "types": "./build/index.d.ts"
       }
     }
   },
