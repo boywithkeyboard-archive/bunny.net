@@ -53,7 +53,8 @@ export class DNS {
     const res = await fetch('https://api.bunny.net/dnszone', {
       method: 'POST',
       headers: {
-        AccessKey: this.#token
+        AccessKey: this.#token,
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
         Domain: options.domain
@@ -83,7 +84,8 @@ export class DNS {
   getZone = async (id: number): Promise<BasicResponse<DNSZone>> => {
     const res = await fetch(`https://api.bunny.net/dnszone/${id}`, {
       headers: {
-        AccessKey: this.#token
+        AccessKey: this.#token,
+        'Content-Type': 'application/json'
       }
     })
 
@@ -130,7 +132,8 @@ export class DNS {
     const res = await fetch(`https://api.bunny.net/dnszone/${id}`, {
       method: 'DELETE',
       headers: {
-        AccessKey: this.#token
+        AccessKey: this.#token,
+        'Content-Type': 'application/json'
       }
     })
 
@@ -158,7 +161,8 @@ export class DNS {
     const res = await fetch(`https://api.bunny.net/dnszone/${zoneId}/records`, {
       method: 'PUT',
       headers: {
-        AccessKey: this.#token
+        AccessKey: this.#token,
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
         Type: RECORD_TYPES.indexOf(options.type),
@@ -209,7 +213,8 @@ export class DNS {
     const res = await fetch(`https://api.bunny.net/dnszone/${zoneId}/records/${id}`, {
       method: 'POST',
       headers: {
-        AccessKey: this.#token
+        AccessKey: this.#token,
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
         ...(options.type && { Type: RECORD_TYPES.indexOf(options.type) }),
@@ -258,7 +263,8 @@ export class DNS {
     const res = await fetch(`https://api.bunny.net/dnszone/${zoneId}/records/${id}`, {
       method: 'DELETE',
       headers: {
-        AccessKey: this.#token
+        AccessKey: this.#token,
+        'Content-Type': 'application/json'
       }
     })
 
