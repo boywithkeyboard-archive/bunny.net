@@ -5,7 +5,7 @@
   "license": "Apache-2.0",
   "description": "JavaScript SDK for 🐇 bunny.net",
   "funding": "https://github.com/sponsors/boywithkeyboard",
-  "repository": "github:boywithkeyboard/bunny.net",
+  "repository": "boywithkeyboard/bunny.net",
   "keywords": [
     "bunny",
     "bunny.net",
@@ -14,37 +14,16 @@
     "cdn",
     "edge storage"
   ],
-  "main": "./build/index.cjs",
-  "module": "./build/index.mjs",
-  "types": "./build/index.d.ts",
-  "files": [
-    "./build"
-  ],
-  "exports": {
-    ".": {
-      "import": {
-        "default": "./build/index.mjs",
-        "types": "./build/index.d.ts"
-      },
-      "require": {
-        "default": "./build/index.cjs",
-        "types": "./build/index.d.ts"
-      }
-    }
-  },
   "scripts": {
-    "build:cjs": "esbuild src/index.ts --bundle --minify --format=cjs --target=es2022 --outfile=build/index.cjs",
-    "build:esm": "esbuild src/index.ts --bundle --minify --format=esm --target=es2022 --outfile=build/index.mjs",
-    "build": "rimraf build && tsc && npm run build:cjs && npm run build:esm",
-    "prepublishOnly": "npm run build"
+    "build": "builder index.ts:index.js"
   },
   "devDependencies": {
-    "@types/node": "^20.11.25",
-    "esbuild": "^0.20.1",
-    "rimraf": "^5.0.5",
-    "typescript": "^5.4.2"
+    "@boywithkeyboard/builder": "^0.14.0",
+    "@types/node": "^20.11.30",
+    "typescript": "^5.4.3"
   },
   "engines": {
     "node": ">=18"
-  }
+  },
+  "type": "module"
 }
