@@ -1,4 +1,4 @@
-import { BasicResponse } from '../shared'
+import { BasicResponse } from '../types'
 import { DNSRecord } from './DNSRecord'
 import { DNSRecordType, RECORD_TYPES } from './DNSRecordType'
 import { DNSZone } from './DNSZone'
